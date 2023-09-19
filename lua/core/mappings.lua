@@ -3,6 +3,11 @@
 local M = {}
 
 M.general = {
+  o = {
+    -- changed behaviour cw to dwi and is usable for repetition
+    ["w"] = { ":execute 'normal! '.v:count1.'w'<CR>" },
+  },
+
   i = {
     -- go to  beginning and end
     ["<C-b>"] = { "<ESC>^i", "Beginning of line" },
@@ -16,22 +21,18 @@ M.general = {
   },
 
   n = {
+    ["<leader>t"] = { "t" },
+
+
     ["<Esc>"] = { ":noh <CR>", "Clear highlights" },
     -- switch between windows
-    ["<C-h>"] = { "<C-w>h", "Window left" },
-    ["<C-l>"] = { "<C-w>l", "Window right" },
-    ["<C-j>"] = { "<C-w>j", "Window down" },
-    ["<C-k>"] = { "<C-w>k", "Window up" },
+    ["<C-h>"] = { ":<C-U>TmuxNavigateLeft<cr>", "Window left" },
+    ["<C-l>"] = { ":<C-U>TmuxNavigateRight<cr>", "Window right" },
+    ["<C-j>"] = { ":<C-U>TmuxNavigateDown<cr>", "Window down" },
+    ["<C-k>"] = { ":<C-U>TmuxNavigateUp<cr>", "Window up" },
 
-    -- save
-    ["<C-s>"] = { "<cmd> w <CR>", "Save file" },
-
-    -- Copy all
-    ["<C-c>"] = { "<cmd> %y+ <CR>", "Copy whole file" },
-
-    -- line numbers
-    ["<leader>n"] = { "<cmd> set nu! <CR>", "Toggle line number" },
-    ["<leader>rn"] = { "<cmd> set rnu! <CR>", "Toggle relative number" },
+    -- spell check
+    ["<leader>s"] = { ":set spell!<CR>" },
 
     -- Allow moving the cursor through wrapped lines with j, k, <Up> and <Down>
     -- http://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
@@ -52,6 +53,17 @@ M.general = {
       end,
       "LSP formatting",
     },
+    
+    -- Nvim-tree
+    ["<leader>n"] = { ":NvimTreeToggle<CR>" },
+    ["<leader>N"] = { ":NvimTreeFindFile<CR>" },
+
+    -- Telescope
+    ["<leader>ff"] = { ":lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<CR>" },
+    ["<leader>fc"] = { ":lua require('telescope.builtin').colorscheme({ enable_preview = true })<CR>" },
+    ["<leader>fg"] = { ":Telescope live_grep<CR>" },
+    ["<leader>fb"] = { ":Telescope buffers<CR>" },
+    ["<leader>fh"] = { ":Telescope help_tags<CR>" },
   },
 
   t = {
