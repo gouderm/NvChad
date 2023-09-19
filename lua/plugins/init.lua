@@ -262,6 +262,24 @@ local default_plugins = {
       require("which-key").setup(opts)
     end,
   },
+
+
+  -- CUSTOM
+	{
+    "https://www.github.com/tpope/vim-surround.git",
+    event = "BufEnter",
+  },
+
+  {
+    "https://www.github.com/tpope/vim-abolish",
+    event = "BufEnter",
+  },
+
+  {
+      "https://github.com/christoomey/vim-tmux-navigator",
+    lazy=false,
+  },
+
 }
 
 local config = require("core.utils").load_config()
