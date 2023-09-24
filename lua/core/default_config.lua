@@ -1,39 +1,5 @@
 local M = {}
 
--- editor
-vim.opt.cursorline = true
-vim.opt.scrolloff = 6
-vim.opt.colorcolumn = "100,120"
-
-vim.opt.relativenumber = true
-vim.opt.number = true
-
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 0
-vim.opt.expandtab = true
-vim.opt.shiftwidth = 4
-vim.opt.smarttab = true
-
--- search
-vim.opt.hlsearch = true
-vim.opt.incsearch = true
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-
--- general
-vim.opt.spelllang = "en"
-vim.opt.vb = true -- turn off beep
-vim.opt.langmenu = "en_US"
--- vim.opt.$LANG = "en"
-vim.opt.encoding = "utf-8"
-vim.opt.fileencoding = "utf-8"
--- vim.opt.$LANG = "en_US.UTF-8"
-vim.opt.maxmempattern = 2000000 -- for very large files
-vim.opt.termguicolors = true
-
---disable mouse
-vim.opt.mouse = ""
-
 M.options = {
   nvchad_branch = "v2.0",
 }
@@ -45,7 +11,7 @@ M.ui = {
   hl_override = {},
   changed_themes = {},
   theme_toggle = { "onedark", "one_light" },
-  theme = "onedark", -- default theme
+  theme = "one_light", -- default theme
   transparency = false,
   lsp_semantic_tokens = false, -- needs nvim v0.9, just adds highlight groups for lsp semantic tokens
 

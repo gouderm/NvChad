@@ -25,7 +25,6 @@ opt.softtabstop = 2
 opt.fillchars = { eob = " " }
 opt.ignorecase = true
 opt.smartcase = true
-opt.mouse = "a"
 
 -- Numbers
 opt.number = true
@@ -51,6 +50,41 @@ opt.whichwrap:append "<>[]hl"
 
 g.mapleader = "t"
 g.maplocalleader = "t"
+
+-- editor
+opt.cursorline = true
+opt.scrolloff = 6
+opt.colorcolumn = "100,120"
+
+opt.relativenumber = true
+opt.number = true
+
+opt.tabstop = 4
+opt.softtabstop = 0
+opt.expandtab = true
+opt.shiftwidth = 4
+opt.smarttab = true
+
+-- search
+opt.hlsearch = true
+opt.incsearch = true
+opt.ignorecase = true
+opt.smartcase = true
+
+-- general
+opt.spelllang = "en"
+opt.vb = true -- turn off beep
+opt.langmenu = "en_US"
+-- opt.$LANG = "en"
+opt.encoding = "utf-8"
+opt.fileencoding = "utf-8"
+-- opt.$LANG = "en_US.UTF-8"
+opt.maxmempattern = 2000000 -- for very large files
+opt.termguicolors = true
+
+--disable mouse
+opt.mouse = ""
+
 
 -- disable some default providers
 for _, provider in ipairs { "node", "perl", "python3", "ruby" } do
