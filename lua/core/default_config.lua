@@ -38,13 +38,16 @@ M.ui = {
     overriden_modules = nil,
   },
 
-  -- lazyload it when there are 1+ buffers
   tabufline = {
-    show_numbers = false,
-    enabled = true,
-    lazyload = true,
-    overriden_modules = nil,
+    overriden_modules = function(modules)
+        modules[4] = (function()
+            return ""
+        end)()
+
+    -- or table.remove(modules, 4)
+    end,
   },
+
 
   -- nvdash (dashboard)
   nvdash = {
