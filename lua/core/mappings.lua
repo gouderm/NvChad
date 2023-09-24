@@ -60,7 +60,7 @@ M.general = {
 
     -- Telescope
     ["<leader>ff"] = { ":lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<CR>" },
-    ["<leader>fc"] = { ":lua require('telescope.builtin').colorscheme({ enable_preview = true })<CR>" },
+    -- ["<leader>fc"] = { ":lua require('telescope.builtin').colorscheme({ enable_preview = true })<CR>" },
     ["<leader>fg"] = { ":Telescope live_grep<CR>" },
     ["<leader>fb"] = { ":Telescope buffers<CR>" },
     ["<leader>fh"] = { ":Telescope help_tags<CR>" },
@@ -298,7 +298,7 @@ M.telescope = {
     ["<leader>pt"] = { "<cmd> Telescope terms <CR>", "Pick hidden term" },
 
     -- theme switcher
-    ["<leader>th"] = { "<cmd> Telescope themes <CR>", "Nvchad themes" },
+    ["<leader>fc"] = { "<cmd> Telescope themes <CR>", "Nvchad themes" },
 
     ["<leader>ma"] = { "<cmd> Telescope marks <CR>", "telescope bookmarks" },
   },
