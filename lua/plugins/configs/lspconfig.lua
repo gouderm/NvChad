@@ -41,7 +41,16 @@ M.capabilities.textDocument.completion.completionItem = {
   },
 }
 
-require("lspconfig").lua_ls.setup {
+local lspconfig = require("lspconfig")
+lspconfig.pyright.setup {}
+lspconfig.texlab.setup {
+    chktex = {
+              onEdit = true,
+              onOpenAndSave = true
+            },
+}
+lspconfig.tsserver.setup {}
+lspconfig.lua_ls.setup {
   on_attach = M.on_attach,
   capabilities = M.capabilities,
 
